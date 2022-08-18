@@ -35,7 +35,7 @@ const style = StyleSheet.create(
             fontWeight: "bold", 
             color: 'white', 
             textAlign: 'center',
-            lineHeight: 60
+            lineHeight: 58
 
         }
     }
