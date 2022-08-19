@@ -10,7 +10,7 @@ const availableZipItems = [
     { place: 'Chiangmai', code: '50000' },
     { place: 'Khonkaen', code: '40000' },
     { place: 'Chonburi', code: '20000' },
-    { place: 'Nakhon Si Thammarat', code: '80000' },
+    { place: 'Nakhon Si Thammarat', code: '80190' },
     { place: 'Phuket', code: '83000'},
     { place: 'Phattalung', code: '93000'},
     { place: 'Surat Thani', code: '84000'},
@@ -31,10 +31,7 @@ const ZipItem = ({place, code, navigation}) => (
         </View>
         <StatusBar style="auto"/>
       </>
-        
-      
     </TouchableHighlight>
-    
 )
 
 const _keyExtractor = item => item.code
@@ -51,7 +48,6 @@ export default function ZipCodeScreen() {
           />
           <StatusBar style="auto"/>
           </View> 
-         
     )
 }
 
@@ -70,7 +66,8 @@ const style = StyleSheet.create(
         fontWeight: "bold",
         color: 'white',
         textAlign: 'right',
-        textAlignVertical: 'center'
+        textAlignVertical: 'center',
+        color: 'rgba(223, 150, 101, 1)'
       },
       zipCode: {
         flex: 2,
@@ -78,7 +75,8 @@ const style = StyleSheet.create(
         fontSize: 34,
         fontWeight: "bold",
         color: 'white',
-        textAlignVertical: 'center'
+        textAlignVertical: 'center',
+        color: 'rgba(223, 150, 101, 1)'
       },
       backdrop: {
         alignItems: 'center',

@@ -31,6 +31,7 @@ export default function Forecast(props) {
             
             </View>
             <Text style={style.titleText}>------------------------------------</Text>
+            <Text style={style.titleText}>{props.name}, {props.country} </Text>
             
             
         </View> 

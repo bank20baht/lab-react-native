@@ -7,6 +7,8 @@ import Constants from 'expo-constants';
 export default function Weather(props) {
     const [forecastInfo, setForecastInfo] = useState(
         {
+            name: 'loading',
+            country: 'loading',
             main: 'loading..',
             description: 'loading',
             temp: 0,
@@ -14,7 +16,7 @@ export default function Weather(props) {
             feels_like: 'loading',
         }
     )
-    
+
     useEffect(() => {
         console.log(`fetching data with zipCode = ${props.zipCode}`);
         if (props.zipCode) {
@@ -24,6 +26,8 @@ export default function Weather(props) {
             .then((response) => response.json())
             .then((json) => {
               setForecastInfo({
+                name: json.name,
+                country: json.sys.country,
                 main: json.weather[0].main,
                 description: json.weather[0].description,
                 humidity: json.main.humidity,
@@ -45,8 +49,7 @@ export default function Weather(props) {
             <View style={style.highlight}>
                 <Forecast {...forecastInfo}/>
                 
-            </View>
-            
+            </View>          
         </ImageBackground>
     );
 }
@@ -71,10 +74,10 @@ const style = StyleSheet.create(
         },
 
         titleText: {
-            fontSize: 32,
+            fontSize: 18,
             fontWeight: "bold",
-            color: 'white',
-            textAlign: 'center'
+            textAlign: 'center',
+            color: 'rgba(223, 150, 101, 1)'
         }
     }
 )
