@@ -1,7 +1,8 @@
 import React from "react";
 import { FlatList, TouchableHighlight } from "react-native";
-import { ImageBackground, StatusBar, View, Text, StyleSheet } from "react-native";
+import { StatusBar, View, Text, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+
 
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' },
@@ -26,8 +27,9 @@ const ZipItem = ({place, code, navigation}) => (
             <Text style= {style.zipCode}>{code}</Text>
         </View>
         <View>
-          <Text style= {{fontSize: 1}}></Text>
+          <Text style= {{fontSize: 1,}}></Text>
         </View>
+        <StatusBar style="auto"/>
       </>
         
       
@@ -41,13 +43,14 @@ export default function ZipCodeScreen() {
     const navigation = useNavigation()
     return (
           <View>
+            <StatusBar styte="auto" />
             <FlatList
             data = {availableZipItems}
             key = {_keyExtractor}
             renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
           />
-          <StatusBar styte="auto" />
-        </View> 
+          <StatusBar style="auto"/>
+          </View> 
          
     )
 }
@@ -58,14 +61,16 @@ const style = StyleSheet.create(
         flex: 2,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        backgroundColor: 'rgba(0, 0, 0, 0.6)'
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        paddingTop: 9
       },
       zipPlace: {
         flex: 2,
         fontSize: 34,
         fontWeight: "bold",
         color: 'white',
-        textAlign: 'right'
+        textAlign: 'right',
+        textAlignVertical: 'center'
       },
       zipCode: {
         flex: 2,
