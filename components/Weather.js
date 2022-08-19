@@ -7,9 +7,11 @@ import Constants from 'expo-constants';
 export default function Weather(props) {
     const [forecastInfo, setForecastInfo] = useState(
         {
-            main: '-',
-            description: '-',
-            temp: 0
+            main: 'loading..',
+            description: 'loading',
+            temp: 0,
+            humidity: 'loading',
+            feels_like: 'loading',
         }
     )
     
@@ -24,7 +26,9 @@ export default function Weather(props) {
               setForecastInfo({
                 main: json.weather[0].main,
                 description: json.weather[0].description,
+                humidity: json.main.humidity,
                 temp: json.main.temp,
+                feels_like: json.main.feels_like,
               });
             })
             .catch((error) => {
@@ -35,10 +39,14 @@ export default function Weather(props) {
 
     return (
         <ImageBackground source={require('../bg.png')} style={style.backdrop}>
+                <View style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', width:"100%"}}>
+                  <Text style={style.titleText}>ZipCode : {props.zipCode}.</Text>
+                </View>
             <View style={style.highlight}>
-                <Text style={style.titleText}>Zip code is {props.zipCode}.</Text>
                 <Forecast {...forecastInfo}/>
+                
             </View>
+            
         </ImageBackground>
     );
 }
@@ -46,16 +54,20 @@ export default function Weather(props) {
 const style = StyleSheet.create(
     {
         backdrop: {
-            alignItems: 'center',
+            
             width: '100%',
             height: '100%'
         },
         highlight: {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
             width:"100%", 
-            height:"45%", 
+            height:"60%", 
             paddingTop: Constants.statusBarHeight, 
-            alignItems: 'center'
+            alignItems: 'center',
+                flexDirection: "row",
+                justifyContent: 'center',
+                alignItem: 'left'
+
         },
 
         titleText: {
