@@ -9,17 +9,27 @@ const availableZipItems = [
     { place: 'Chiangmai', code: '50000' },
     { place: 'Khonkaen', code: '40000' },
     { place: 'Chonburi', code: '20000' },
+    { place: 'Nakhon Si Thammarat', code: '80000' },
+    { place: 'Phuket', code: '83000'},
+    { place: 'Phattalung', code: '93000'},
+    { place: 'Surat Thani', code: '84000'},
+    { place: 'Chumphon', code: '86000' },
    ]
 
 const ZipItem = ({place, code, navigation}) => (
     <TouchableHighlight onPress={() => {
         navigation.navigate("Weather", {zipCode: code})
     }}>
-      
+      <>
         <View style= {style.zipItem}>
             <Text style= {style.zipPlace}>{place}</Text>
             <Text style= {style.zipCode}>{code}</Text>
         </View>
+        <View>
+          <Text style= {{fontSize: 1}}></Text>
+        </View>
+      </>
+        
       
     </TouchableHighlight>
     
@@ -48,11 +58,11 @@ const style = StyleSheet.create(
         flex: 2,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)'
+        backgroundColor: 'rgba(0, 0, 0, 0.6)'
       },
       zipPlace: {
         flex: 2,
-        fontSize: 32,
+        fontSize: 34,
         fontWeight: "bold",
         color: 'white',
         textAlign: 'right'
@@ -60,9 +70,10 @@ const style = StyleSheet.create(
       zipCode: {
         flex: 2,
         textAlign: 'center',
-        fontSize: 30,
+        fontSize: 34,
         fontWeight: "bold",
         color: 'white',
+        textAlignVertical: 'center'
       },
       backdrop: {
         alignItems: 'center',
@@ -70,4 +81,4 @@ const style = StyleSheet.create(
         height: '100%'
     },
     }
-  )
+  ) 

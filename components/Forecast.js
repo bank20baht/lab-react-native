@@ -13,8 +13,8 @@ export default function Forecast(props) {
                 <Text style={style.tempNum}>{props.temp}</Text>
                 <Text style={style.normalText}> °C</Text>
             </View>
-            <Text style={style.normalText}>{props.main}</Text>
-            <Text style={style.normalText}>------------------------------------</Text>
+            <Text style={style.titleText}>{props.main}</Text>
+            <Text style={style.titleText}>------------------------------------</Text>
             <View style= {{
                 flexDirection: "row",
                 justifyContent: 'space-between',
@@ -30,7 +30,7 @@ export default function Forecast(props) {
                 </View>
             
             </View>
-            <Text style={style.normalText}>------------------------------------</Text>
+            <Text style={style.titleText}>------------------------------------</Text>
             
             
         </View> 
@@ -54,6 +54,13 @@ const style = StyleSheet.create(
             textAlign: 'center',
             lineHeight: 90,
 
+        },
+
+        titleText: {
+            textAlign: 'center',
+            fontSize: 25,
+            fontWeight: "bold",
+            color: 'white',
         }
     }
 )
