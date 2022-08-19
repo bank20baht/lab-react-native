@@ -41,8 +41,11 @@ export default function Weather(props) {
         }
       }, [props.zipCode]);
 
+      const bg = require("../bg.png")
+      const bg2 = require("../bg2.png")
+
     return (
-        <ImageBackground source={require('../bg.png')} style={style.backdrop}>
+      <ImageBackground source={forecastInfo.temp < 28 ? bg2: bg} style={style.backdrop}>
                 <View style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', width:"100%"}}>
                   <Text style={style.titleText}>ZipCode : {props.zipCode}.</Text>
                 </View>
@@ -67,9 +70,10 @@ const style = StyleSheet.create(
             height:"60%", 
             paddingTop: Constants.statusBarHeight, 
             alignItems: 'center',
-                flexDirection: "row",
-                justifyContent: 'center',
-                alignItem: 'left'
+            flexDirection: "row",
+            justifyContent: 'center',
+            alignItem: 'left',
+            
 
         },
 

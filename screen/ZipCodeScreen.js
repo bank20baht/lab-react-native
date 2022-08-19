@@ -39,7 +39,7 @@ const _keyExtractor = item => item.code
 export default function ZipCodeScreen() {
     const navigation = useNavigation()
     return (
-          <View>
+          <View style={{backgroundColor:'#363636'}}>
             <StatusBar styte="auto" />
             <FlatList
             data = {availableZipItems}
@@ -57,8 +57,9 @@ const style = StyleSheet.create(
         flex: 2,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-        paddingTop: 9
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        paddingTop: 9,
+        borderRadius: 5
       },
       zipPlace: {
         flex: 2,
@@ -82,6 +83,6 @@ const style = StyleSheet.create(
         alignItems: 'center',
         width: '100%',
         height: '100%'
-    },
+      },
     }
   ) 
