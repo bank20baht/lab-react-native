@@ -18,13 +18,16 @@
 ![cool tone bg](https://user-images.githubusercontent.com/89448778/185665168-580365ef-dc03-44d9-8e33-1fed235613bf.png)
 
 ## Part 6 "Change background when high or low temperature" ทำให้ background ของหน้า weather เปลี่ยนไปตามอุณหภูมิที่ zipcode นั้นๆได้มา
-###ถ้าน้อยกว่า 28 ก็ใช้ background โทนสีเย็น
+### ถ้าน้อยกว่า 28 ก็ใช้ background โทนสีเย็น
 
 ![cool tone bg](https://user-images.githubusercontent.com/89448778/185665168-580365ef-dc03-44d9-8e33-1fed235613bf.png)
 
-###ถ้ามากกว่าใช้ background โทนร้อน
+### ถ้ามากกว่าใช้ background โทนร้อน
 
 ![worm tone bg](https://user-images.githubusercontent.com/89448778/185665309-b92f8bf2-4105-475b-8f77-3062c0a7338a.png)
 
 **ซึ่งรูปทั้งหมดจะรวบรวมเเละเก็บอยู่ใน folder screenshot ของ repo นี้ครับ
 ขอบคุณครับ**
+
+### extra Part 3 and  CHALLENGE
+![Part 3 and  CHALLENGE](https://user-images.githubusercontent.com/89448778/186684737-49b4971d-a798-4c11-8b00-d02a62dd5000.png)
